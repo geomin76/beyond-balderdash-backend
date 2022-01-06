@@ -78,8 +78,6 @@ export default class Room {
         this.io.to(this.roomId).emit('show-players-joined', { playersJoined: clients });
     }
 
-    // add player scores
-
     isReady() {
         this.socker.on('is-ready', () => {
             for (const player of this.store.clients) {
@@ -101,7 +99,7 @@ export default class Room {
 
     }
 
-    // shift turns (person who is trying to guess)
+    // shift turns (person who is trying to guess), will just rotate
 
     /**
      * will have to add logic for:
